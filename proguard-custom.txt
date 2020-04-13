@@ -51,23 +51,23 @@
 -keepattributes SourceFile,LineNumberTable
 
 # Enable proguard with Cordova
--keep class org.apache.cordova.** { *; }
--keep public class * extends org.apache.cordova.CordovaPlugin
+#-keep class org.apache.cordova.** { *; }
+#-keep public class * extends org.apache.cordova.CordovaPlugin
 
--keep class com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader { java.lang.ClassLoader sClassLoader; }
+#-keep class com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader { java.lang.ClassLoader sClassLoader; }
 
--keep class org.apache.cordova.CordovaBridge { org.apache.cordova.PluginManager pluginManager; }
--keep class org.apache.cordova.CordovaInterfaceImpl { org.apache.cordova.PluginManager pluginManager; }
--keep class org.apache.cordova.CordovaResourceApi { org.apache.cordova.PluginManager pluginManager; }
--keep class org.apache.cordova.CordovaWebViewImpl { org.apache.cordova.PluginManager pluginManager; }
--keep class org.apache.cordova.ResumeCallback { org.apache.cordova.PluginManager pluginManager; }
--keep class org.apache.cordova.engine.SystemWebViewEngine { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.CordovaBridge { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.CordovaInterfaceImpl { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.CordovaResourceApi { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.CordovaWebViewImpl { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.ResumeCallback { org.apache.cordova.PluginManager pluginManager; }
+#-keep class org.apache.cordova.engine.SystemWebViewEngine { org.apache.cordova.PluginManager pluginManager; }
 
--dontnote org.apache.harmony.xnet.provider.jsse.NativeCrypto
--dontnote sun.misc.Unsafe
+#-dontnote org.apache.harmony.xnet.provider.jsse.NativeCrypto
+#-dontnote sun.misc.Unsafe
 
--keep class com.worklight.androidgap.push.** { *; }
--keep class com.worklight.wlclient.push.** { *; }
+#-keep class com.worklight.androidgap.push.** { *; }
+#-keep class com.worklight.wlclient.push.** { *; }
 
 # Enable proguard with Google libs
 -keep class com.google.** { *; }
@@ -78,8 +78,8 @@
 # apache.http
 -optimizations !class/merging/vertical*,!class/merging/horizontal*,!code/simplification/arithmetic,!field/*,!code/allocation/variable
 
--keep class net.sqlcipher.** { *; }
--dontwarn net.sqlcipher.**
+#-keep class net.sqlcipher.** { *; }
+#-dontwarn net.sqlcipher.**
 
 -keep class org.codehaus.** { *; }
 -keepattributes *Annotation*,EnclosingMethod
@@ -108,3 +108,4 @@
 # These clases contain references to cordova webView
 -keep class com.ionicframework.cordova.webview.** {*; }
 -keep class com.ionicframework.cordova.webview.*
+-ignorewarnings
